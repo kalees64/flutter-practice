@@ -9,6 +9,14 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  static String myName = "VK64";
+
+  static List<Map<String, dynamic>> products = [
+    {"id": 1, "name": "Product 1", "price": 10.0},
+    {"id": 2, "name": "Product 22", "price": 15.0},
+    {"id": 3, "name": "Product 3", "price": 20.0},
+  ];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,7 +24,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: Text(
-            "VK64",
+            myName,
             style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
           ),
           backgroundColor: Colors.blue,
@@ -28,10 +36,8 @@ class MyApp extends StatelessWidget {
             spacing: 4,
             children: [
               h5(text: "Product Widgets"),
-              ...List.generate(
-                5,
-                (index) => productCard(name: "Product ${index + 1}"),
-              ),
+              ...products.map(
+                  (product) => productCard(name: product["name"] as String))
             ],
           ),
         ),
