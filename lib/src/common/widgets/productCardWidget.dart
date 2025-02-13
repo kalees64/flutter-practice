@@ -10,6 +10,8 @@ Widget productCard() {
               color: Colors.green, borderRadius: BorderRadius.circular(5)),
           child: Row(
             spacing: 8,
+            // mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 width: 75,
@@ -24,7 +26,8 @@ Widget productCard() {
               ),
               Expanded(
                 child: Container(
-                  height: 75,
+                  // height: 75,
+                  // color: Colors.red,
                   alignment: Alignment.topLeft,
                   padding: EdgeInsets.all(4),
                   child: Column(
