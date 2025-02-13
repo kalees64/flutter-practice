@@ -1,4 +1,5 @@
 import 'package:first_flutter_app/src/common/widgets/customHeadings.dart';
+import 'package:first_flutter_app/src/common/widgets/productCardWidget.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -20,14 +21,17 @@ class MyApp extends StatelessWidget {
           ),
           backgroundColor: Colors.blue,
         ),
-        body: Column(
-          children: [
-            h1(text: "My first Flutter app with custom H1 component"),
-            h2(text: "My first Flutter app with custom H2 component"),
-            h3(text: "My first Flutter app with custom H3 component"),
-            h4(text: "My first Flutter app with custom H4 component"),
-            h5(text: "My first Flutter app with custom H5 component"),
-          ],
+        body: Container(
+          padding: EdgeInsets.all(7),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            spacing: 4,
+            children: [
+              h5(text: "Product Widgets"),
+              productCard(),
+              productCard(),
+            ],
+          ),
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: [
@@ -43,7 +47,7 @@ class MyApp extends StatelessWidget {
           unselectedItemColor: Colors.black,
           type: BottomNavigationBarType.fixed,
           onTap: (index) {
-            print("I Love You $index");
+            print("Index is $index");
           },
         ),
       ),
