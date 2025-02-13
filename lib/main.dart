@@ -28,8 +28,10 @@ class MyApp extends StatelessWidget {
             spacing: 4,
             children: [
               h5(text: "Product Widgets"),
-              productCard(),
-              productCard(),
+              ...List.generate(
+                5,
+                (index) => productCard(name: "Product ${index + 1}"),
+              ),
             ],
           ),
         ),

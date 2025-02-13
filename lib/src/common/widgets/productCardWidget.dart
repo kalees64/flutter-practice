@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-Widget productCard() {
+Widget productCard({
+  required String name,
+}) {
   return Row(
     children: [
       Expanded(
@@ -35,7 +37,7 @@ Widget productCard() {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Product 1",
+                        name,
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                       Text(
